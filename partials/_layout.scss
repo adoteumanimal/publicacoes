@@ -1,0 +1,335 @@
+.container {
+    max-width: 1920px; // Define a largura máxima do contêiner
+    margin: 0 auto; // Centraliza o contêiner
+    padding: 0 8px; // Adiciona preenchimento lateral
+}
+
+// BG HOME
+.bg-home {
+    position: relative; // Permite posicionamento absoluto dos filhos
+}
+
+.bg-home::before {
+    content: ''; // Cria um pseudo-elemento
+    display: block; 
+    position: absolute; // Posiciona por cima do conteúdo
+    background-image: linear-gradient(to bottom, rgba(6, 18, 30, 0.1), #06121e), url("../assets/Fundo(5).jpg");
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; // Fica atrás de outros elementos
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    opacity: 0.9; // Define a opacidade
+}
+
+// ---------------------------------------------------
+
+// HERO --------------
+
+.hero {
+    color: #FFF; // Cor do texto
+    min-height: 80vh; // Altura mínima da seção
+
+    display: flex; // Usando flexbox para layout
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    padding: 14px;
+
+    h1 {
+        text-align: center; 
+        line-height: 150%;
+        max-width: 940px; // Largura máxima do título
+        font-size: 48px; // Tamanho da fonte
+    }
+
+    p {
+        text-align: center; 
+        margin: 14px 0; // Margem vertical
+    }
+}
+
+// Estilo do botão de contato
+.button-contact {
+    padding: 14px 28px;
+    color: #FFF;
+    background-color: #d94140; // Cor de fundo
+    border: 0;
+    font-size: 18px; // Tamanho da fonte
+    font-weight: 600; // Peso da fonte
+    margin: 14px 0; // Margem vertical
+}
+
+.button-contact:hover {
+    animation: scaleButton 0.8s alternate infinite; // Animação de hover
+}
+
+@keyframes scaleButton {
+    from {
+        transform: scale(1); // Estado inicial
+    }
+    to {
+        transform: scale(1.07); // Estado final da animação
+    }
+}
+
+// Ajustes para dispositivos móveis
+
+@media screen and (max-width: 1200px) {
+    .hero {
+        min-height: 60vh; // Altura reduzida para telas menores
+
+        h1 {
+            font-size: 36px; // Tamanho da fonte reduzido
+            padding: 0 14px; // Preenchimento lateral
+            width: 100%; // Largura total
+        }
+
+        p {
+            font-size: 18px; // Tamanho da fonte do parágrafo
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .hero h1 {
+        font-size: 32px; // Ajuste menor para o título
+    }
+
+    .hero p {
+        font-size: 16px; // Ajuste menor para o parágrafo
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .hero h1 {
+        font-size: 28px; // Tamanho da fonte para celulares
+    }
+
+    .hero p {
+        font-size: 14px; // Tamanho da fonte para celulares
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .hero h1 {
+        font-size: 32px; // Tamanho da fonte para celulares pequenos
+        padding: 0 16px; // Preenchimento lateral reduzido
+    }
+
+    .hero p {
+        font-size: 14px; // Tamanho da fonte do parágrafo
+    }
+}
+
+// -------------------------------
+
+// About -------------------
+.about {
+    background-color: #13191f; // Cor de fundo
+    overflow: hidden; // Impede overflow
+    color: #ffffff; // Cor do texto
+}
+
+.about-content {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    gap: 14px; // Espaçamento entre itens
+    padding: 34px 14px 64px 14px; // Preenchimento
+
+    img {
+        max-width: 570px; // Largura máxima da imagem
+    }
+}
+
+.about-content div {
+    flex: 1; // Permite que divs se expandam
+}
+
+.about-description {
+    h2 {
+        font-size: 38px; // Tamanho do título
+        margin-bottom: 24px; // Margem abaixo do título
+    }
+
+    p {
+        margin-bottom: 14px; // Margem abaixo do parágrafo
+        line-height: 150%; // Espaçamento entre linhas
+    }
+}
+
+// Ajustes para telas menores
+@media screen and (max-width: 992px) {
+    .about-content {
+        flex-direction: column; // Muda para coluna em telas menores
+    }
+
+    .about-description h2 {
+        font-size: 32px; // Ajuste para o título
+    }
+
+    .about-description p {
+        font-size: 18px; // Ajuste para o parágrafo
+    }
+}
+
+// --------------------------------------------
+
+// SERVICES
+
+.services {
+    background-color: $white-normal; // Cor de fundo
+    color: $black-normal; // Cor do texto
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    padding: 54px 14px; // Preenchimento
+}
+
+.services-content h2 {
+    text-transform: uppercase; // Maiúsculas
+    text-align: center; 
+    font-size: 38px; // Tamanho do título
+    margin-bottom: 14px; // Margem abaixo do título
+}
+
+.services-content p {
+    line-height: 150%; // Espaçamento entre linhas
+    margin-bottom: 14px; // Margem abaixo do parágrafo
+    text-align: center; 
+    max-width: 780px; // Largura máxima
+}
+
+.haircuts {
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    gap: 16px; // Espaçamento entre itens
+    padding: 0 44px 34px 44px; // Preenchimento
+}
+
+.haircut {
+    flex: 1; // Permite que cada corte se expanda
+    display: flex; 
+    flex-direction: column;
+    background-color: $white-normal; // Cor de fundo
+    border-radius: 8px; // Bordas arredondadas
+    box-shadow: 0px -1px 17px -4px rgba(0, 0, 0, 0.45); // Sombra
+    overflow: hidden;
+
+    img {
+        width: 100%; // Imagem ocupa toda a largura
+        max-width: 354px; // Largura máxima da imagem
+        transition: transform 0.2s; // Transição suave ao hover
+    }
+}
+
+.haircut img:hover {
+    transform: scale(1.2); // Aumenta a imagem ao passar o mouse
+    z-index: 1; // Eleva a imagem acima dos outros elementos
+}
+
+.haircut-info {
+    width: 100%; // Largura total
+    display: flex; 
+    justify-content: space-between; // Espaçamento entre itens
+    padding: 14px; // Preenchimento
+    background-color: $white-normal; // Cor de fundo
+    z-index: 99; // Mantém acima de outros elementos
+}
+
+.haircut-info button {
+    color: $white-normal; // Cor do texto
+    background-color: $red-normal; // Cor de fundo
+    padding: 4px 8px; // Preenchimento do botão
+    border-radius: 4px; // Bordas arredondadas
+    border: 0; // Sem borda
+    cursor: pointer; // Muda o cursor para mão
+}
+
+// Ajustes para celulares
+@media screen and (max-width: 1024px) {
+    .haircuts {
+        flex-direction: column; // Muda para coluna em telas menores
+    }
+
+    .haircut img {
+        max-width: 100%; // Imagem ocupa toda a largura do contêiner
+    }
+}
+
+// ---------------------------------------
+
+// Footer
+
+.footer {
+    display: flex; 
+    flex-direction: column; // Muda para coluna
+    align-items: center; 
+    justify-content: center; 
+    padding: 54px 0; // Preenchimento
+    gap: 24px; // Espaçamento entre itens
+    color: $white-normal; // Cor do texto
+}
+
+.footer-icons {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    padding: 54px 0; // Preenchimento
+    gap: 8px; // Espaçamento entre ícones
+    color: $white-normal; // Cor do texto
+}
+
+// -------------------------------------------------
+
+// Botão whatsapp
+.btn-whatssapp {
+    position: fixed; // Fixa na tela
+    bottom: 24px; // Distância do fundo
+    right: 24px; // Distância da direita
+    z-index: 99; // Mantém acima de outros elementos
+
+    img {
+        max-width: 74px; // Largura máxima da imagem
+        transition: transform 0.4s; // Transição suave
+    }
+
+    img:hover {
+        transform: scale(1.1); // Aumenta a imagem ao passar o mouse
+    }
+}
+
+.btn-whatssapp .tooltip-text {
+    visibility: hidden; // Oculta tooltip por padrão
+    position: absolute; // Posiciona tooltip
+    width: 120px; // Largura da tooltip
+    top: 8px; // Distância do topo
+    left: -144px; // Distância da esquerda
+    padding: 6px; // Preenchimento da tooltip
+    border-radius: 8px; // Bordas arredondadas
+    text-align: center; 
+    background-color: $black-normal; // Cor de fundo
+    color: $white-normal; // Cor do texto
+    opacity: 0; // Oculta tooltip
+    transition: opacity 0.4s; // Transição suave
+}
+
+.btn-whatssapp:hover .tooltip-text {
+    visibility: visible; // Exibe tooltip ao passar o mouse
+    opacity: 1; // Torna a tooltip visível
+}
+
+// Ajustes para celulares
+@media screen and (max-width: 768px) {
+    .btn-whatssapp {
+        img {
+            max-width: 40px; // Largura máxima da imagem do botão
+        }
+    }
+}
